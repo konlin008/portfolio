@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import { ArrowUpRight, Code2, Database, Globe, ChevronDown } from "lucide-react";
+import { ArrowUpRight, Code2, Database, Globe, ChevronDown, ExternalLink } from "lucide-react";
 
 
 const skills = [
@@ -23,7 +23,7 @@ const projects = [
     desc: "Modern LMS with secure authentication, role-based access control, and full Stripe payment integration.",
     year: "2024",
     liveLink: 'https://lms-buwm.vercel.app/',
-    repoLink:'https://github.com/konlin008/LMS'
+    repoLink: 'https://github.com/konlin008/LMS'
   },
   {
     number: "02",
@@ -31,6 +31,8 @@ const projects = [
     tags: ["Socket.io", "Kanban", "Realtime"],
     desc: "Collaborative Kanban board with real-time chat powered by WebSockets and Socket.io.",
     year: "2024",
+    liveLink: 'https://team-task-manager-zeta-seven.vercel.app',
+    repoLink: 'https://github.com/konlin008/Team-Task-Manager'
   },
   {
     number: "03",
@@ -38,6 +40,8 @@ const projects = [
     tags: ["React", "Animation", "UI"],
     desc: "Personal developer portfolio with scroll animations, responsive layout, and clean visual UX.",
     year: "2025",
+    liveLink: '/',
+    repoLink: 'https://github.com/konlin008/portfolio'
   },
 ];
 
@@ -377,22 +381,34 @@ export default function App() {
       </section>
 
 
-      <section id="projects" className="px-8 md:px-16 py-24 border-t border-zinc-900">
-        <FadeIn><SectionLabel>03 — Projects</SectionLabel></FadeIn>
+      <section
+        id="projects"
+        className="px-8 md:px-16 py-24 border-t border-zinc-900"
+      >
+        <FadeIn>
+          <SectionLabel>03 — Projects</SectionLabel>
+        </FadeIn>
 
         <div>
           {projects.map((p, i) => (
             <FadeIn key={p.number} delay={i * 0.08}>
-              <div className="group border-t border-zinc-900 py-8 px-4 -mx-4 hover:bg-zinc-900/40 transition-colors duration-300 cursor-none">
-                <div className="flex items-start md:items-center justify-between gap-6">
-                  <div className="flex items-start md:items-center gap-6 md:gap-10 flex-1">
-                    <span className="font-mono-dm text-xs text-zinc-700 group-hover:text-amber-400 transition-colors duration-300 pt-1 md:pt-0 shrink-0 w-6">
+              <div className="group border-t border-zinc-900 py-8 px-4 -mx-4 hover:bg-zinc-900/40 transition-all duration-300 hover:border-amber-400/30">
+
+                <div className="flex items-start justify-between gap-6">
+
+                  <div className="flex gap-6 md:gap-10 flex-1">
+
+                    <span className="font-mono-dm text-xs text-zinc-700 group-hover:text-amber-400 transition-colors duration-300 pt-1 w-6 shrink-0">
                       {p.number}
                     </span>
 
                     <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <h3 className="font-display font-bold text-2xl md:text-3xl">{p.title}</h3>
+
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <h3 className="font-display font-bold text-2xl md:text-3xl">
+                          {p.title}
+                        </h3>
+
                         <div className="flex flex-wrap gap-2">
                           {p.tags.map((t) => (
                             <span
@@ -404,13 +420,42 @@ export default function App() {
                           ))}
                         </div>
                       </div>
-                      <p className="text-zinc-500 text-sm leading-relaxed max-w-xl">{p.desc}</p>
+
+                      <p className="text-zinc-500 text-sm leading-relaxed max-w-xl mb-5">
+                        {p.desc}
+                      </p>
+
+                      <div className="flex items-center gap-4">
+
+                        <a
+                          href={p.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-zinc-400 hover:text-amber-400 transition-colors"
+                        >
+                          <ExternalLink size={16} />
+                          Live Demo
+                        </a>
+
+                        <a
+                          href={p.repoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
+                        >
+                          <FaGithub size={16} />
+                          Source Code
+                        </a>
+
+                      </div>
                     </div>
                   </div>
 
-
                   <div className="flex flex-col items-end gap-2 shrink-0">
-                    <span className="font-mono-dm text-xs text-zinc-700">{p.year}</span>
+                    <span className="font-mono-dm text-xs text-zinc-700">
+                      {p.year}
+                    </span>
+
                     <ArrowUpRight
                       size={20}
                       className="text-amber-400 opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200"
@@ -420,6 +465,7 @@ export default function App() {
               </div>
             </FadeIn>
           ))}
+
           <div className="border-t border-zinc-900" />
         </div>
       </section>
@@ -447,7 +493,7 @@ export default function App() {
 
             <div className="flex flex-wrap gap-4 items-center">
               <a
-                href="mailto:aman@example.com"
+                href="mailto:amanofficial0108@gmail.com"
                 className="inline-flex items-center gap-2 bg-amber-400 text-black font-mono-dm text-[0.72rem] tracking-[0.1em] uppercase px-7 py-3.5 font-medium hover:bg-amber-300 transition-colors duration-200"
               >
                 Get in touch <ArrowUpRight size={14} />
@@ -455,9 +501,9 @@ export default function App() {
 
               <div className="flex gap-3">
                 {[
-                  { icon: <FaGithub />, href: "#" },
-                  { icon: <FaLinkedin />, href: "#" },
-                  { icon: <IoIosMail />, href: "#" },
+                  { icon: <FaGithub />, href: "https://github.com/konlin008" },
+                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/aman-mondal-506a402a8/" },
+                  { icon: <IoIosMail />, href: "mailto:amanofficial0108@gmail.com" }
                 ].map((s, i) => (
                   <a
                     key={i}

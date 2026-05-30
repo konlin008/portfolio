@@ -1,17 +1,89 @@
-# React + Vite
+# Aman Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern personal portfolio built with React, Vite, and Tailwind CSS. It presents Aman as a MERN stack developer with sections for profile, skills, featured projects, resume download, and contact links.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive single-page portfolio layout
+- Animated hero, scroll progress bar, custom cursor, and reveal-on-scroll sections
+- Filterable skills grouped by frontend and backend
+- Featured project cards with live demo and source code links
+- Downloadable CV from the `public` folder
+- GitHub, LinkedIn, and email contact links
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- React Icons
+- Lucide React
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# portfolio" 
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+.
+├── public/
+│   └── Aman_CV.pdf
+├── src/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Customization
+
+Most portfolio content is managed directly in `src/App.jsx`:
+
+- Update `skills` to change the skills list and categories.
+- Update `projects` to change project titles, descriptions, tags, live links, and repository links.
+- Replace `public/Aman_CV.pdf` to update the downloadable resume.
+- Update contact links in the hero and contact sections.
+
+## Featured Projects
+
+- Skillora LMS
+- Team Task Manager
+- Portfolio Website
+
+## Contact
+
+- GitHub: [konlin008](https://github.com/konlin008)
+- LinkedIn: [Aman Mondal](https://www.linkedin.com/in/aman-mondal-506a402a8/)
+- Email: [amanofficial0108@gmail.com](mailto:amanofficial0108@gmail.com)
